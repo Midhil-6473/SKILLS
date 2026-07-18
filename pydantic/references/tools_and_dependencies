@@ -1,0 +1,183 @@
+# Tools and Dependency Injection
+
+## Tools — functions the LLM can call
+
+```python
+from pydantic_ai import Agent
+
+agent = Agent("claude-sonnet-4-6")
+
+@agent.tool_plain
+def get_weather(city: str) -> str:
+    """Get the current weather for a city."""
+    return f"Sunny, 72°F in {city}"
+
+result = agent.run_sync("What's the weather in Boston?")
+```
+
+`@agent.tool_plain` is for tools that don't need access to dependencies or run
+context — a pure function. **Write docstrings as carefully as public API
+documentation** — the LLM decides whether/how to call a tool based entirely on its
+name, docstring, and type-hinted parameter signature. A vague docstring leads to
+incorrect tool selection or missing arguments; a precise one describing what the
+tool does, when to use it, and what its parameters represent is called correctly.
+
+## `@agent.tool` — tools needing `RunContext` (dependencies, agent state)
+
+```python
+from pydantic_ai import Agent, RunContext
+from dataclasses import dataclass
+
+@dataclass
+class WeatherService:
+    async def get_forecast(self, location: str) -> str:
+        # In real code: call a weather API, query a database, etc.
+        return f"Forecast for {location}: sunny"
+
+agent = Agent("claude-sonnet-4-6", deps_type=WeatherService)
+
+@agent.tool
+async def get_weather(ctx: RunContext[WeatherService], location: str) -> str:
+    """Get the weather forecast for a location."""
+    return await ctx.deps.get_forecast(location)
+
+result = agent.run_sync("What's the weather in Tokyo?", deps=WeatherService())
+```
+
+**Use `@agent.tool` (not `@agent.tool_plain`) whenever a tool needs access to
+dependencies, or state carried via `RunContext`** — for agents with many tools,
+`@agent.tool_plain` also signals clearly to the LLM (and to a human reading the
+code) that this particular tool has no side effects on agent state.
+
+## Dependency injection — solving the global-state problem
+
+The core insight: instead of module-level globals or environment lookups inside
+tool functions (a pattern that plagues most ad-hoc LLM agent code), declare a
+**typed dependency container** and inject it at runtime via `deps_type`. This
+mirrors FastAPI's own dependency injection philosophy closely.
+
+```python
+from dataclasses import dataclass
+from pydantic_ai import Agent, RunContext
+import httpx
+
+@dataclass
+class SupportDependencies:
+    customer_id: int
+    db_pool: "DatabasePool"
+    http_client: httpx.AsyncClient
+
+agent = Agent("claude-sonnet-4-6", deps_type=SupportDependencies)
+
+@agent.tool
+async def get_order_history(ctx: RunContext[SupportDependencies]) -> list[dict]:
+    """Retrieve the customer's order history."""
+    return await ctx.deps.db_pool.fetch_orders(ctx.deps.customer_id)
+
+@agent.tool
+async def check_shipping_status(ctx: RunContext[SupportDependencies], order_id: str) -> str:
+    """Check the shipping status of a specific order."""
+    response = await ctx.deps.http_client.get(f"/shipping/{order_id}")
+    return response.json()["status"]
+```
+
+```python
+# Running with real dependencies
+deps = SupportDependencies(customer_id=123, db_pool=real_pool, http_client=real_client)
+result = await agent.run("What's the status of my last order?", deps=deps)
+```
+
+**Why this matters for testability:** tests can swap in mock dependencies without
+patching globals or monkeypatching module state — the dependency container is just
+a normal Python object passed explicitly at call time.
+
+```python
+# Testing with mock dependencies — no monkeypatching needed
+class MockDBPool:
+    async def fetch_orders(self, customer_id: int) -> list[dict]:
+        return [{"id": "test-order-1", "status": "shipped"}]
+
+mock_deps = SupportDependencies(
+    customer_id=123,
+    db_pool=MockDBPool(),
+    http_client=mock_http_client,
+)
+result = await agent.run("What are my recent orders?", deps=mock_deps)
+assert "test-order-1" in result.output
+```
+
+This is one of Pydantic AI's most-cited practical advantages over ad-hoc agent
+code: dependency injection makes agent tests trivial to write, since mocking
+doesn't require patching global state or module-level singletons.
+
+## Tool error handling and retries
+
+```python
+from pydantic_ai import Agent, ModelRetry
+
+@agent.tool
+async def lookup_order(ctx: RunContext[SupportDependencies], order_id: str) -> dict:
+    """Look up an order by ID."""
+    order = await ctx.deps.db_pool.get_order(order_id)
+    if order is None:
+        raise ModelRetry(f"No order found with ID {order_id}. Please verify the ID and try again.")
+    return order
+```
+
+`ModelRetry` is the mechanism for telling the model "this didn't work, try again
+with different arguments" — the message is fed back to the model as context for
+its next attempt, distinct from a raw exception that would simply terminate the
+run.
+
+## Tool timeouts
+
+```python
+agent = Agent("claude-sonnet-4-6", tool_timeout=10.0)   # default timeout for all tools
+
+@agent.tool(timeout=5.0)   # per-tool override
+async def slow_external_call(ctx: RunContext[SupportDependencies]) -> str:
+    """Call a potentially slow external service."""
+    ...
+```
+
+If a tool exceeds its timeout, it's considered failed and a retry prompt is
+returned to the model — counting toward the tool's retry budget. Always set
+timeouts on tools calling external services, the same principle as any other
+production system.
+
+## Retry budgets
+
+```python
+agent = Agent(
+    "claude-sonnet-4-6",
+    retries=3,                                  # same budget for tools and output validation
+    # or: retries={"tools": 3, "output": 1}      # set independently
+)
+```
+
+Controls how many times the framework will retry a failed tool call or a failed
+output-schema validation before giving up and surfacing an error — tune this based
+on how forgiving vs. strict you want failure handling to be.
+
+## Parallel tool calls
+
+```python
+# If the model requests multiple tool calls in one turn, Pydantic AI executes them
+# concurrently by default. If a max_concurrency limit would be exceeded, no tools
+# in that batch are executed — an explicit fail-safe rather than partial execution.
+agent = Agent("claude-sonnet-4-6", max_concurrency=5)
+```
+
+## Practical guidance
+
+1. **Write tool docstrings as carefully as public API documentation** — this is
+   the single biggest lever on correct tool selection.
+2. **Use `@agent.tool_plain` for side-effect-free tools, `@agent.tool` whenever
+   dependencies or context are needed** — the distinction communicates intent to
+   both the LLM and future readers of the code.
+3. **Always inject dependencies via `deps_type`/`RunContext`**, never module-level
+   globals — this is the pattern that makes agents genuinely testable.
+4. **Use `ModelRetry` (not a raw exception) for recoverable tool failures** where
+   giving the model another attempt with feedback is the right behavior.
+5. **Set tool timeouts on anything calling an external service**, matching the same
+   discipline you'd apply to any production code.
