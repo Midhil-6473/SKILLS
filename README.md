@@ -35,6 +35,7 @@ Below are the main frameworks, languages, and tools documented across these deve
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3A?style=flat-square&logo=chainlink&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white)
 
 ---
 
@@ -49,7 +50,8 @@ skills/
 ├── React/                # React + FastAPI AI UI/UX (Streaming, Agentic Panels)
 ├── docker-k8s-mlops/     # Containerization, Kubernetes Orchestration, & MLOps
 ├── fastapi_skill/        # High-performance FastAPI Backend Design & Auth
-└── mcp/                  # Model Context Protocol (FastMCP Servers & Transports)
+└── mcp/                 # Model Context Protocol (FastMCP Servers & Transports)
+└── pydantic/            # Pydantic (Data Validation, Type-Safe Models & Serialization)
 ```
 
 ---
@@ -68,6 +70,7 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 | **Docker + K8s**    | Multi-stage image builds, liveness/readiness probes, and GPU scheduling. | [docker-k8s-mlops/SKILL.md](docker-k8s-mlops/SKILL.md) |
 | **FastAPI**         | Clean API design, Pydantic validation, dependency injection, and auth.   | [fastapi_skill/SKILL.md](fastapi_skill/SKILL.md)       |
 | **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](mcp/SKILL.md)                           |
+| **Pydantic**        | Pydantic (Data Validation, Type-Safe Models & Serialization)             | [pydantic/SKILL.md](pydantic/SKILL.md)                 |
 
 ---
 
@@ -164,6 +167,18 @@ Click on any panel below to expand and view the reference blueprints and guideli
   - [transports.md](mcp/references/transports.md) — Standard input/output streams vs. remote HTTP and ASGI mount pathways.
   - [security.md](mcp/references/security.md) — Mitigating sandbox escalations, prompt injections, and token poisoning.
   </details>
+
+  <details>
+<summary><b>9. Pydantic Architect's Manual</b> (Click to expand)</summary>
+
+- **Focus**: Type-safe data validation and AI agent development. Build validated data models, structured AI outputs, and production-ready typed agents.
+- **Key Reference Docs**:
+  - [validation_fundamentals.md](pydantic/references/validation_fundamentals.md) — Core Pydantic models, validation, type coercion, Field constraints, and serialization.
+  - [validators.md](pydantic/references/validators.md) — Custom field and model validation with before, after, and wrap modes.
+  - [pydantic_ai_agents.md](pydantic/references/pydantic_ai_agents.md) — Building type-safe AI agents with structured outputs, prompts, streaming, and multi-turn conversations.
+  - [tools_and_dependencies.md](pydantic/references/tools_and_dependencies.md) — Agent tools, typed dependency injection, RunContext, retries, and testable architectures.
+  - [structured_outputs.md](pydantic/references/structured_outputs.md) — Validated LLM responses, automatic validation retries, output strategies, and structured streaming.
+</details>
 
 ---
 
