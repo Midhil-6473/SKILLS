@@ -8,6 +8,7 @@ const readline = require('readline');
 const VERSION = '1.1.0';
 
 const SKILLS = [
+  'DSA',
   'LangChain',
   'Llamaindex',
   'MongoDB',
