@@ -50,8 +50,13 @@ skills/
 ├── React/                # React + FastAPI AI UI/UX (Streaming, Agentic Panels)
 ├── docker-k8s-mlops/     # Containerization, Kubernetes Orchestration, & MLOps
 ├── fastapi_skill/        # High-performance FastAPI Backend Design & Auth
+<<<<<<< HEAD
 └── mcp/                 # Model Context Protocol (FastMCP Servers & Transports)
 └── pydantic/            # Pydantic (Data Validation, Type-Safe Models & Serialization)
+=======
+├── mcp/                  # Model Context Protocol (FastMCP Servers & Transports)
+└── pydantic/             # Pydantic v2 Schema validation, Settings, & PydanticAI agents
+>>>>>>> 09d8efd (DSA skill)
 ```
 
 ---
@@ -70,7 +75,11 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 | **Docker + K8s**    | Multi-stage image builds, liveness/readiness probes, and GPU scheduling. | [docker-k8s-mlops/SKILL.md](docker-k8s-mlops/SKILL.md) |
 | **FastAPI**         | Clean API design, Pydantic validation, dependency injection, and auth.   | [fastapi_skill/SKILL.md](fastapi_skill/SKILL.md)       |
 | **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](mcp/SKILL.md)                           |
+<<<<<<< HEAD
 | **Pydantic**        | Pydantic (Data Validation, Type-Safe Models & Serialization)             | [pydantic/SKILL.md](pydantic/SKILL.md)                 |
+=======
+| **Pydantic**        | Schema validation, settings management, and agentic workflows (PydanticAI).| [pydantic/SKILL.md](pydantic/SKILL.md)                 |
+>>>>>>> 09d8efd (DSA skill)
 
 ---
 
@@ -167,6 +176,19 @@ Click on any panel below to expand and view the reference blueprints and guideli
   - [transports.md](mcp/references/transports.md) — Standard input/output streams vs. remote HTTP and ASGI mount pathways.
   - [security.md](mcp/references/security.md) — Mitigating sandbox escalations, prompt injections, and token poisoning.
   </details>
+ 
+ <details>
+ <summary><b>9. Pydantic Expert Manual</b> (Click to expand)</summary>
+ 
+ - **Focus**: Core data schemas, validation layers, configuration blocks, and structured agent workflows using PydanticAI.
+ - **Key Reference Docs**:
+   - [validation_fundamentals.md](pydantic/references/validation_fundamentals.md) — BaseModels, field configurations, and serialization options.
+   - [validators.md](pydantic/references/validators.md) — Before/After field validators and root validations.
+   - [stuctured_and_outputs.md](pydantic/references/stuctured_and_outputs.md) — JSON schema parsing and formatting responses from LLMs.
+   - [settings_management.md](pydantic/references/settings_management.md) — Environment variables loading and application configuration.
+   - [pydantic_ai_agents.md](pydantic/references/pydantic_ai_agents.md) — Designing agent flows, models selection, and runs execution.
+   - [learning_path.md](pydantic/references/learning_path.md) — Step-by-step track from basic schemas to production multi-agent system.
+   </details>
 
   <details>
 <summary><b>9. Pydantic Architect's Manual</b> (Click to expand)</summary>
@@ -196,6 +218,7 @@ graph TD
     Route -->|Deployment / Infra| OPS[Read docker-k8s-mlops/SKILL.md]
     Route -->|API Business Logic| API[Read fastapi_skill/SKILL.md]
     Route -->|AI Tooling spec| MCP[Read mcp/SKILL.md]
+    Route -->|Schema / PydanticAI| PY[Read pydantic/SKILL.md]
 
     LC --> Consult[Consult references/ directory for targeted blueprints & guidelines]
     LI --> Consult
@@ -204,6 +227,7 @@ graph TD
     OPS --> Consult
     API --> Consult
     MCP --> Consult
+    PY --> Consult
 ```
 
 1. **Check the Entrypoint**: Start by reading the root `SKILL.md` of the relevant folder. It holds best practices, quick install setup commands, and a code stub.

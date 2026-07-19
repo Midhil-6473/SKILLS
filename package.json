@@ -1,0 +1,38 @@
+{
+  "name": "developer-skills-bank",
+  "version": "1.1.0",
+  "description": "CLI tool to install structured developer skills and blueprints for AI CLIs and Agent harnesses.",
+  "main": "bin/cli.js",
+  "bin": {
+    "developer-skills-bank": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "LangChain",
+    "Llamaindex",
+    "MongoDB",
+    "PostgreSQL",
+    "React",
+    "docker-k8s-mlops",
+    "fastapi_skill",
+    "mcp",
+    "pydantic",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "cursor",
+    "claude",
+    "mcp",
+    "skills",
+    "pydantic",
+    "langchain",
+    "llamaindex"
+  ],
+  "author": "",
+  "license": "ISC"
+}
