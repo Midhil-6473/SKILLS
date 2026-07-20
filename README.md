@@ -87,16 +87,16 @@ Click on any panel below to expand and view the reference blueprints and guideli
 - **Focus**: Complete guide to Data Structures and Algorithms conceptually and idiomatically in Java — from beginner fundamentals through FAANG-level problem solving.
 - **Key Reference Docs**:
   - [java_fundamentals.md](DSA/references/java_fundamentals.md) — Java syntax, Collections Framework, generics, and Big-O notation.
-  - [linear_stuctures.md](DSA/references/linear_stuctures.md) — Arrays, ArrayLists, LinkedLists, Stacks, and Queues.
+  - [linear_structures.md](DSA/references/linear_structures.md) — Arrays, ArrayLists, LinkedLists, Stacks, and Queues.
   - [hashing.md](DSA/references/hashing.md) — HashTables, HashMap, HashSet, collision resolution, and custom keys.
   - [trees.md](DSA/references/trees.md) — Binary Trees, BSTs, AVL, Segment Trees, and tree traversals.
   - [graphs.md](DSA/references/graphs.md) — Adjacency lists/matrices, BFS, DFS, Dijkstra, Prim, and Kruskal.
   - [heaps.md](DSA/references/heaps.md) — PriorityQueue, Min-Heap, Max-Heap, and HeapSort.
   - [sorting_and_searching.md](DSA/references/sorting_and_searching.md) — QuickSort, MergeSort, Binary Search, and Two Pointers.
-  - [recurssion_and_backtracking.md](DSA/references/recurssion_and_backtracking.md) — N-Queens, Subsets, Permutations, and recursive stack traces.
+  - [recursion_and_backtracking.md](DSA/references/recursion_and_backtracking.md) — N-Queens, Subsets, Permutations, and recursive stack traces.
   - [dynamic_programming.md](DSA/references/dynamic_programming.md) — Memoization, Tabulation, 0/1 Knapsack, and LCS.
   - [greedy_algorithms.md](DSA/references/greedy_algorithms.md) — Activity Selection, Fractional Knapsack, and Huffman Coding.
-  - [problem_sloving_strategy.md](DSA/references/problem_sloving_strategy.md) — Problem categorization, pattern recognition, and interview frameworks.
+  - [problem_solving_strategy.md](DSA/references/problem_solving_strategy.md) — Problem categorization, pattern recognition, and interview frameworks.
   - [learning_path.md](DSA/references/learning_path.md) — Step-by-step roadmap from beginner Java basics to FAANG-level problem solving.
 </details>
 

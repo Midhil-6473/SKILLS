@@ -32,7 +32,11 @@
     "skills",
     "pydantic",
     "langchain",
-    "llamaindex"
+    "llamaindex",
+    "dsa",
+    "algorithms",
+    "data-structures",
+    "java"
   ],
   "author": "",
   "license": "ISC"
