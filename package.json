@@ -8,17 +8,7 @@
   },
   "files": [
     "bin",
-    "DSA",
-    "LangChain",
-    "Llamaindex",
-    "MongoDB",
-    "PostgreSQL",
-    "React",
-    "docker-k8s-mlops",
-    "fastapi_skill",
-    "llm_agent_security",
-    "mcp",
-    "pydantic",
+    "skills",
     "README.md"
   ],
   "engines": {
