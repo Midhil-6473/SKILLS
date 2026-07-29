@@ -1,6 +1,6 @@
 # Developer Skills Workspace
 
-Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 10 developer skills. It functions as both a personal reference center and a capability store for agentic development.
+Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 11 developer skills. It functions as both a personal reference center and a capability store for agentic development.
 
 To make this page highly readable and interactive, we've organized the domain references inside collapsible blocks below. You can copy the code from this file directly into your Git repository's `README.md`.
 
@@ -8,10 +8,15 @@ To make this page highly readable and interactive, we've organized the domain re
 
 ## ⚡ Quick CLI Installation & Setup
 
-You can install and deploy these skills directly to your coding environments (such as **Claude Code**, **Gemini CLI**, **Copilot**, **Cursor**, etc.) with zero dependencies using the matching `npx` command:
+You can install and deploy these skills directly to your coding environments (such as **Claude Code**, **Gemini CLI**, **Copilot**, **Cursor**, etc.) using either of the following commands:
 
+**Option 1: Using the Vercel Skills CLI (Displays the interactive tree UI)**
 ```bash
-# Register skills inside Cursor (.cursorrules) or mount as Claude Desktop MCP filesystem server
+npx skills add Midhil-6473/SKILLS
+```
+
+**Option 2: Using the custom menu-driven CLI**
+```bash
 npx developer-skills-bank
 ```
 
@@ -52,6 +57,7 @@ skills/
 ├── React/                # React + FastAPI AI UI/UX (Streaming, Agentic Panels)
 ├── docker-k8s-mlops/     # Containerization, Kubernetes Orchestration, & MLOps
 ├── fastapi_skill/        # High-performance FastAPI Backend Design & Auth
+├── llm_agent_security/   # LLM & Agentic Security (Injection, Guardrails, Sandboxing)
 ├── mcp/                  # Model Context Protocol (FastMCP Servers & Transports)
 └── pydantic/             # Pydantic v2 Schema validation, Settings, & PydanticAI agents
 ```
@@ -72,6 +78,7 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 | **React + FastAPI** | AI UIs, Event Sources (SSE), websocket streaming, and proxy gateways.    | [React/SKILL.md](React/SKILL.md)                       |
 | **Docker + K8s**    | Multi-stage image builds, liveness/readiness probes, and GPU scheduling. | [docker-k8s-mlops/SKILL.md](docker-k8s-mlops/SKILL.md) |
 | **FastAPI**         | Clean API design, Pydantic validation, dependency injection, and auth.   | [fastapi_skill/SKILL.md](fastapi_skill/SKILL.md)       |
+| **LLM Security**    | Securing LLM apps and agents against injection, jailbreaks, and excessive agency. | [llm_agent_security/SKILL.md](llm_agent_security/SKILL.md) |
 | **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](mcp/SKILL.md)                           |
 | **Pydantic**        | Schema validation, settings management, and agentic workflows (PydanticAI).| [pydantic/SKILL.md](pydantic/SKILL.md)                 |
 
@@ -204,6 +211,24 @@ Click on any panel below to expand and view the reference blueprints and guideli
   - [learning_path.md](pydantic/references/learning_path.md) — Step-by-step track from basic schemas to production multi-agent systems.
 </details>
 
+<details>
+<summary><b>11. LLM & Agent Security Manual</b> (Click to expand)</summary>
+
+- **Focus**: Layered defense model for securing LLMs and autonomous agents against prompt injection, jailbreaks, excessive agency, and tool/memory poisoning.
+- **Key Reference Docs**:
+  - [threat_landscape.md](llm_agent_security/references/threat_landscape.md) — OWASP Top 10 for LLM/Agentic apps, MITRE ATLAS framework, and security scoring.
+  - [prompt_injection.md](llm_agent_security/references/prompt_injection.md) — Attack surfaces (direct/indirect injection) and defense mechanisms.
+  - [jailbreaks.md](llm_agent_security/references/jailbreaks.md) — Jailbreak tactics (roleplay, encoding, multi-turn crescendo) and mitigation.
+  - [guardrails.md](llm_agent_security/references/guardrails.md) — Production runtime defenses using NeMo Guardrails, Guardrails AI, and LLM Guard.
+  - [agentic_risks.md](llm_agent_security/references/agentic_risks.md) — Specific threats to autonomous agents like tool and memory poisoning.
+  - [least_privilege_architecture.md](llm_agent_security/references/least_privilege_architecture.md) — Securing agents through sandboxing, scoped API keys, and human-in-the-loop approvals.
+  - [output_handling.md](llm_agent_security/references/output_handling.md) — Sanitizing LLM outputs to prevent downstream SQLi, XSS, and PII leakage.
+  - [red_teaming.md](llm_agent_security/references/red_teaming.md) — Adversarial pre-deployment testing using Garak, PyRIT, and Promptfoo.
+  - [rag_and_mcp_security.md](llm_agent_security/references/rag_and_mcp_security.md) — Securing MCP server endpoints and data retrieval vector pipelines.
+  - [governance_and_monitoring.md](llm_agent_security/references/governance_and_monitoring.md) — Compliance standards, NIST AI Risk Management Framework, and production logs.
+  - [learning_path.md](llm_agent_security/references/learning_path.md) — Sequential roadmap from security fundamentals to enterprise security architecture.
+</details>
+
 ---
 
 ## 🧭 How to Consult & Use the Skills
@@ -220,6 +245,7 @@ graph TD
     Route -->|Frontend / Gateway| FE[Read React/SKILL.md]
     Route -->|Deployment / Infra| OPS[Read docker-k8s-mlops/SKILL.md]
     Route -->|API Business Logic| API[Read fastapi_skill/SKILL.md]
+    Route -->|LLM Security / Safety| SEC[Read llm_agent_security/SKILL.md]
     Route -->|AI Tooling spec| MCP[Read mcp/SKILL.md]
     Route -->|Schema / PydanticAI| PY[Read pydantic/SKILL.md]
 
@@ -230,6 +256,7 @@ graph TD
     FE --> Consult
     OPS --> Consult
     API --> Consult
+    SEC --> Consult
     MCP --> Consult
     PY --> Consult
 ```

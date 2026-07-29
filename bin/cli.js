@@ -5,7 +5,7 @@ const path = require('path');
 const os = require('os');
 const readline = require('readline');
 
-const VERSION = '1.1.0';
+const VERSION = '1.2.0';
 
 const SKILLS = [
   'DSA',
@@ -16,6 +16,7 @@ const SKILLS = [
   'React',
   'docker-k8s-mlops',
   'fastapi_skill',
+  'llm_agent_security',
   'mcp',
   'pydantic'
 ];
