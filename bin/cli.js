@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const readline = require('readline');
+const p = require('@clack/prompts');
 
 const VERSION = '1.2.0';
 
@@ -204,58 +205,87 @@ If you are developing custom agent harnesses, you can load these directories as 
 `);
 }
 
-// Prompt wrapper
-function ask(query) {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  return new Promise(resolve => rl.question(query, ans => {
-    rl.close();
-    resolve(ans.trim());
-  }));
-}
-
 // Interactive Mode main loop
 async function runInteractive() {
-  console.log(BANNER);
+  p.intro(`\x1b[36m${BANNER}\x1b[0m`);
   
   while (true) {
-    console.log(`\n\x1b[1m--- Main Menu ---\x1b[0m`);
-    console.log(`1) 📂 \x1b[36mInstall all skills\x1b[0m (to a directory)`);
-    console.log(`2) 🎯 \x1b[36mInstall a single skill\x1b[0m`);
-    console.log(`3) 🤖 \x1b[36mConfigure Claude Desktop\x1b[0m (MCP Filesystem Server)`);
-    console.log(`4) 🧭 \x1b[36mView Integration Guidelines\x1b[0m (Cursor, Claude Code, Gemini CLI, etc.)`);
-    console.log(`5) ❌ \x1b[31mExit\x1b[0m`);
-    
-    const choice = await ask(`\nSelect an option (1-5): `);
-    
-    if (choice === '1') {
-      const dest = await ask(`Enter destination directory (default: ./skills): `) || './skills';
-      installAllSkills(dest);
-    } else if (choice === '2') {
-      console.log(`\nAvailable skills:`);
-      SKILLS.forEach((s, idx) => console.log(`  ${idx + 1}) ${s}`));
-      const skillChoiceIdx = await ask(`Select a skill number (1-${SKILLS.length}): `);
-      const parsedIdx = parseInt(skillChoiceIdx, 10) - 1;
-      
-      if (parsedIdx >= 0 && parsedIdx < SKILLS.length) {
-        const skillName = SKILLS[parsedIdx];
-        const dest = await ask(`Enter destination directory (default: ./skills): `) || './skills';
-        installSkill(skillName, dest);
-      } else {
-        console.log(`\x1b[31mInvalid selection.\x1b[0m`);
-      }
-    } else if (choice === '3') {
-      const dest = await ask(`Enter the path of the installed skills folder to mount (default: ./skills): `) || './skills';
-      configureClaudeMCP(dest);
-    } else if (choice === '4') {
-      printGuidelines();
-    } else if (choice === '5' || choice.toLowerCase() === 'q') {
-      console.log(`Goodbye!`);
+    const choice = await p.select({
+      message: 'Choose an action:',
+      options: [
+        { value: 'install_skills', label: '📂 Install Skills' },
+        { value: 'configure_mcp', label: '🤖 Configure Claude Desktop MCP' },
+        { value: 'guidelines', label: '🧭 View Integration Guidelines' },
+        { value: 'exit', label: '❌ Exit' }
+      ]
+    });
+
+    if (p.isCancel(choice) || choice === 'exit') {
+      p.outro('Goodbye!');
       break;
-    } else {
-      console.log(`\x1b[31mInvalid option. Please enter a number 1-5.\x1b[0m`);
+    }
+
+    if (choice === 'install_skills') {
+      const mode = await p.select({
+        message: 'How would you like to install the skills?',
+        options: [
+          { value: 'all', label: 'All skills (Default)' },
+          { value: 'specific', label: 'Select specific skills from a checklist' }
+        ]
+      });
+
+      if (p.isCancel(mode)) continue;
+
+      let selectedSkills = [];
+      if (mode === 'all') {
+        selectedSkills = SKILLS;
+      } else {
+        selectedSkills = await p.multiselect({
+          message: 'Select skills to install (Space to toggle, Enter to confirm):',
+          options: SKILLS.map(skill => ({ value: skill, label: skill })),
+          required: true
+        });
+
+        if (p.isCancel(selectedSkills)) continue;
+      }
+
+      const destInput = await p.text({
+        message: 'Enter destination directory:',
+        placeholder: './skills',
+        defaultValue: './skills'
+      });
+
+      if (p.isCancel(destInput)) continue;
+
+      const dest = destInput || './skills';
+
+      // Perform installation
+      p.log.info(`Installing to: ${path.resolve(dest)}...`);
+      let successCount = 0;
+      for (const skill of selectedSkills) {
+        if (installSkill(skill, dest)) {
+          successCount++;
+        }
+      }
+      p.outro(`✓ Complete! Successfully installed ${successCount}/${selectedSkills.length} skills maintaining folder structure.`);
+
+    } else if (choice === 'configure_mcp') {
+      const destInput = await p.text({
+        message: 'Enter the path of the installed skills folder to mount:',
+        placeholder: './skills',
+        defaultValue: './skills'
+      });
+
+      if (p.isCancel(destInput)) continue;
+
+      const dest = destInput || './skills';
+      configureClaudeMCP(dest);
+
+    } else if (choice === 'guidelines') {
+      printGuidelines();
+      await p.text({
+        message: 'Press Enter to return to the main menu...'
+      });
     }
   }
 }

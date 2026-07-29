@@ -40,5 +40,8 @@
     "java"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@clack/prompts": "^0.7.0"
+  }
 }
