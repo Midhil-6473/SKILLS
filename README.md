@@ -1,6 +1,6 @@
 # Developer Skills Workspace
 
-Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 11 developer skills. It functions as both a personal reference center and a capability store for agentic development.
+Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 12 developer skills. It functions as both a personal reference center and a capability store for agentic development.
 
 To make this page highly readable and interactive, we've organized the domain references inside collapsible blocks below. You can copy the code from this file directly into your Git repository's `README.md`.
 
@@ -59,7 +59,8 @@ skills/
 ├── fastapi_skill/        # High-performance FastAPI Backend Design & Auth
 ├── llm_agent_security/   # LLM & Agentic Security (Injection, Guardrails, Sandboxing)
 ├── mcp/                  # Model Context Protocol (FastMCP Servers & Transports)
-└── pydantic/             # Pydantic v2 Schema validation, Settings, & PydanticAI agents
+├── pydantic/             # Pydantic v2 Schema validation, Settings, & PydanticAI agents
+└── unsloth-finetuning/   # Unsloth Fine-tuning (LoRA, QLoRA, Model Export & Dataset Prep)
 ```
 
 ---
@@ -81,6 +82,7 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 | **LLM Security**    | Securing LLM apps and agents against injection, jailbreaks, and excessive agency. | [llm_agent_security/SKILL.md](skills/all/llm_agent_security/SKILL.md) |
 | **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](skills/all/mcp/SKILL.md)                           |
 | **Pydantic**        | Schema validation, settings management, and agentic workflows (PydanticAI).| [pydantic/SKILL.md](skills/all/pydantic/SKILL.md)                 |
+| **Unsloth Fine-Tuning** | Efficient LLM fine-tuning (LoRA/QLoRA) with minimized VRAM footprints. | [unsloth-finetuning/SKILL.md](skills/all/unsloth-finetuning/SKILL.md) |
 
 ---
 
@@ -229,6 +231,22 @@ Click on any panel below to expand and view the reference blueprints and guideli
   - [learning_path.md](skills/all/llm_agent_security/references/learning_path.md) — Sequential roadmap from security fundamentals to enterprise security architecture.
 </details>
 
+<details>
+<summary><b>12. Unsloth Fine-Tuning Manual</b> (Click to expand)</summary>
+
+- **Focus**: Complete guide to efficient fine-tuning of LLMs using Unsloth (LoRA/QLoRA) with minimized VRAM footprint.
+- **Key Reference Docs**:
+  - [setup_and_models.md](skills/all/unsloth-finetuning/references/setup_and_models.md) — Installing Unsloth, base model selection, and VRAM requirement planning.
+  - [dataset_preparation.md](skills/all/unsloth-finetuning/references/dataset_preparation.md) — Chat templates, instruction formatting, and train/eval splits.
+  - [lora_hyperparameters.md](skills/all/unsloth-finetuning/references/lora_hyperparameters.md) — LoRA rank, alpha, dropout, target modules, and DoRA.
+  - [training.md](skills/all/unsloth-finetuning/references/training.md) — SFTTrainer configuration, learning rates, batch sizes, and gradient checkpointing.
+  - [evaluation.md](skills/all/unsloth-finetuning/references/evaluation.md) — Qualitative/quantitative validation and catastrophic forgetting mitigation.
+  - [export_and_deployment.md](skills/all/unsloth-finetuning/references/export_and_deployment.md) — Model merging, GGUF/Ollama export, and deployment with vLLM.
+  - [troubleshooting.md](skills/all/unsloth-finetuning/references/troubleshooting.md) — Common error resolution, OOM fixes, and chat template alignment.
+  - [advances_techniques.md](skills/all/unsloth-finetuning/references/advances_techniques.md) — Preference tuning (DPO), multimodal tuning, and advanced PEFT.
+  - [learning_path.md](skills/all/unsloth-finetuning/references/learning_path.md) — Structured curriculum from beginner concepts to advanced fine-tuning models.
+</details>
+
 ---
 
 ## 🧭 How to Consult & Use the Skills
@@ -248,6 +266,7 @@ graph TD
     Route -->|LLM Security / Safety| SEC[Read llm_agent_security/SKILL.md]
     Route -->|AI Tooling spec| MCP[Read mcp/SKILL.md]
     Route -->|Schema / PydanticAI| PY[Read pydantic/SKILL.md]
+    Route -->|LLM Fine-tuning / LoRA| UF[Read unsloth-finetuning/SKILL.md]
 
     DSA --> Consult[Consult references/ directory for targeted blueprints & guidelines]
     LC --> Consult
@@ -259,6 +278,7 @@ graph TD
     SEC --> Consult
     MCP --> Consult
     PY --> Consult
+    UF --> Consult
 ```
 
 1. **Check the Entrypoint**: Start by reading the root `SKILL.md` of the relevant folder. It holds best practices, quick install setup commands, and a code stub.
