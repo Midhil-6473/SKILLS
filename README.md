@@ -42,6 +42,7 @@ Below are the main frameworks, languages, and tools documented across these deve
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3A?style=flat-square&logo=chainlink&logoColor=white)
 ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white)
+![Unsloth](https://img.shields.io/badge/Unsloth-00C853?style=flat-square&logo=unsloth)
 
 ---
 
