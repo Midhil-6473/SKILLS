@@ -1,0 +1,20 @@
+{
+  "name": "Midhil-6473 Skills",
+  "version": "1.3.0",
+  "description": "Developer Skills Bank containing structured blueprints for AI agents.",
+  "skills": [
+    "skills/all/DSA",
+    "skills/all/LangChain",
+    "skills/all/Llamaindex",
+    "skills/all/MongoDB",
+    "skills/all/PostgreSQL",
+    "skills/all/React",
+    "skills/all/docker-k8s-mlops",
+    "skills/all/fastapi_skill",
+    "skills/all/llm_agent_security",
+    "skills/all/mcp",
+    "skills/all/pydantic",
+    "skills/all/unsloth-finetuning",
+    "skills/meta/info"
+  ]
+}
