@@ -48,7 +48,7 @@ Below are the main frameworks, languages, and tools documented across these deve
 ## 📂 Directory Overview
 
 ```text
-skills/
+skills/skills/
 ├── DSA/                  # Data Structures & Algorithms in Java (Fundamentals to Advanced)
 ├── LangChain/            # LangChain v1 / LangGraph / Deep Agents (2026 Shift)
 ├── Llamaindex/           # Data Ingestion, Vector DBs, & Q&A RAG Pipelines
@@ -71,18 +71,18 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 
 | Skill               | Description                                                              | Entrypoint                                             |
 | :------------------ | :----------------------------------------------------------------------- | :----------------------------------------------------- |
-| **DSA (Java)**      | Complete manual for Data Structures & Algorithms (DSA) in Java.          | [DSA/SKILL.md](skills/DSA/SKILL.md)                           |
-| **LangChain**       | Modern LLM applications using LangChain v1, LangGraph, and Deep Agents.  | [LangChain/SKILL.md](skills/LangChain/SKILL.md)               |
-| **LlamaIndex**      | Lead connector framework for context-augmented Q&A/RAG pipelines.        | [Llamaindex/SKILL.md](skills/Llamaindex/SKILL.md)             |
-| **MongoDB**         | NoSQL document modeling, compound indexes (ESR), and aggregations.       | [MongoDB/SKILL.md](skills/MongoDB/SKILL.md)                   |
-| **PostgreSQL**      | Relational schemas, analytical window queries, CTEs, and `JSONB` data.   | [PostgreSQL/SKILL.md](skills/PostgreSQL/SKILL.md)             |
-| **React + FastAPI** | AI UIs, Event Sources (SSE), websocket streaming, and proxy gateways.    | [React/SKILL.md](skills/React/SKILL.md)                       |
-| **Docker + K8s**    | Multi-stage image builds, liveness/readiness probes, and GPU scheduling. | [docker-k8s-mlops/SKILL.md](skills/docker-k8s-mlops/SKILL.md) |
-| **FastAPI**         | Clean API design, Pydantic validation, dependency injection, and auth.   | [fastapi_skill/SKILL.md](skills/fastapi_skill/SKILL.md)       |
-| **LLM Security**    | Securing LLM apps and agents against injection, jailbreaks, and excessive agency. | [llm_agent_security/SKILL.md](skills/llm_agent_security/SKILL.md) |
-| **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](skills/mcp/SKILL.md)                           |
-| **Pydantic**        | Schema validation, settings management, and agentic workflows (PydanticAI).| [pydantic/SKILL.md](skills/pydantic/SKILL.md)                 |
-| **Unsloth Fine-Tuning** | Efficient LLM fine-tuning (LoRA/QLoRA) with minimized VRAM footprints. | [unsloth-finetuning/SKILL.md](skills/unsloth-finetuning/SKILL.md) |
+| **DSA (Java)**      | Complete manual for Data Structures & Algorithms (DSA) in Java.          | [DSA/SKILL.md](skills/skills/DSA/SKILL.md)                           |
+| **LangChain**       | Modern LLM applications using LangChain v1, LangGraph, and Deep Agents.  | [LangChain/SKILL.md](skills/skills/LangChain/SKILL.md)               |
+| **LlamaIndex**      | Lead connector framework for context-augmented Q&A/RAG pipelines.        | [Llamaindex/SKILL.md](skills/skills/Llamaindex/SKILL.md)             |
+| **MongoDB**         | NoSQL document modeling, compound indexes (ESR), and aggregations.       | [MongoDB/SKILL.md](skills/skills/MongoDB/SKILL.md)                   |
+| **PostgreSQL**      | Relational schemas, analytical window queries, CTEs, and `JSONB` data.   | [PostgreSQL/SKILL.md](skills/skills/PostgreSQL/SKILL.md)             |
+| **React + FastAPI** | AI UIs, Event Sources (SSE), websocket streaming, and proxy gateways.    | [React/SKILL.md](skills/skills/React/SKILL.md)                       |
+| **Docker + K8s**    | Multi-stage image builds, liveness/readiness probes, and GPU scheduling. | [docker-k8s-mlops/SKILL.md](skills/skills/docker-k8s-mlops/SKILL.md) |
+| **FastAPI**         | Clean API design, Pydantic validation, dependency injection, and auth.   | [fastapi_skill/SKILL.md](skills/skills/fastapi_skill/SKILL.md)       |
+| **LLM Security**    | Securing LLM apps and agents against injection, jailbreaks, and excessive agency. | [llm_agent_security/SKILL.md](skills/skills/llm_agent_security/SKILL.md) |
+| **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](skills/skills/mcp/SKILL.md)                           |
+| **Pydantic**        | Schema validation, settings management, and agentic workflows (PydanticAI).| [pydantic/SKILL.md](skills/skills/pydantic/SKILL.md)                 |
+| **Unsloth Fine-Tuning** | Efficient LLM fine-tuning (LoRA/QLoRA) with minimized VRAM footprints. | [unsloth-finetuning/SKILL.md](skills/skills/unsloth-finetuning/SKILL.md) |
 
 ---
 
@@ -95,18 +95,18 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Complete guide to Data Structures and Algorithms conceptually and idiomatically in Java — from beginner fundamentals through FAANG-level problem solving.
 - **Key Reference Docs**:
-  - [java_fundamentals.md](skills/DSA/references/java_fundamentals.md) — Java syntax, Collections Framework, generics, and Big-O notation.
-  - [linear_structures.md](skills/DSA/references/linear_structures.md) — Arrays, ArrayLists, LinkedLists, Stacks, and Queues.
-  - [hashing.md](skills/DSA/references/hashing.md) — HashTables, HashMap, HashSet, collision resolution, and custom keys.
-  - [trees.md](skills/DSA/references/trees.md) — Binary Trees, BSTs, AVL, Segment Trees, and tree traversals.
-  - [graphs.md](skills/DSA/references/graphs.md) — Adjacency lists/matrices, BFS, DFS, Dijkstra, Prim, and Kruskal.
-  - [heaps.md](skills/DSA/references/heaps.md) — PriorityQueue, Min-Heap, Max-Heap, and HeapSort.
-  - [sorting_and_searching.md](skills/DSA/references/sorting_and_searching.md) — QuickSort, MergeSort, Binary Search, and Two Pointers.
-  - [recursion_and_backtracking.md](skills/DSA/references/recursion_and_backtracking.md) — N-Queens, Subsets, Permutations, and recursive stack traces.
-  - [dynamic_programming.md](skills/DSA/references/dynamic_programming.md) — Memoization, Tabulation, 0/1 Knapsack, and LCS.
-  - [greedy_algorithms.md](skills/DSA/references/greedy_algorithms.md) — Activity Selection, Fractional Knapsack, and Huffman Coding.
-  - [problem_solving_strategy.md](skills/DSA/references/problem_solving_strategy.md) — Problem categorization, pattern recognition, and interview frameworks.
-  - [learning_path.md](skills/DSA/references/learning_path.md) — Step-by-step roadmap from beginner Java basics to FAANG-level problem solving.
+  - [java_fundamentals.md](skills/skills/DSA/references/java_fundamentals.md) — Java syntax, Collections Framework, generics, and Big-O notation.
+  - [linear_structures.md](skills/skills/DSA/references/linear_structures.md) — Arrays, ArrayLists, LinkedLists, Stacks, and Queues.
+  - [hashing.md](skills/skills/DSA/references/hashing.md) — HashTables, HashMap, HashSet, collision resolution, and custom keys.
+  - [trees.md](skills/skills/DSA/references/trees.md) — Binary Trees, BSTs, AVL, Segment Trees, and tree traversals.
+  - [graphs.md](skills/skills/DSA/references/graphs.md) — Adjacency lists/matrices, BFS, DFS, Dijkstra, Prim, and Kruskal.
+  - [heaps.md](skills/skills/DSA/references/heaps.md) — PriorityQueue, Min-Heap, Max-Heap, and HeapSort.
+  - [sorting_and_searching.md](skills/skills/DSA/references/sorting_and_searching.md) — QuickSort, MergeSort, Binary Search, and Two Pointers.
+  - [recursion_and_backtracking.md](skills/skills/DSA/references/recursion_and_backtracking.md) — N-Queens, Subsets, Permutations, and recursive stack traces.
+  - [dynamic_programming.md](skills/skills/DSA/references/dynamic_programming.md) — Memoization, Tabulation, 0/1 Knapsack, and LCS.
+  - [greedy_algorithms.md](skills/skills/DSA/references/greedy_algorithms.md) — Activity Selection, Fractional Knapsack, and Huffman Coding.
+  - [problem_solving_strategy.md](skills/skills/DSA/references/problem_solving_strategy.md) — Problem categorization, pattern recognition, and interview frameworks.
+  - [learning_path.md](skills/skills/DSA/references/learning_path.md) — Step-by-step roadmap from beginner Java basics to FAANG-level problem solving.
 </details>
 
 <details>
@@ -114,11 +114,11 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Replaces legacy `AgentExecutor` chains with middleware-extensible graph models using LangGraph and Deep Agents.
 - **Key Reference Docs**:
-  - [models.md](skills/LangChain/references/MODELS.md) — Model initializations, streaming, and tool calling basics.
-  - [agents.md](skills/LangChain/references/AGENT.md) — Detailed configurations for single and multi-agent harnesses.
-  - [memory.md](skills/LangChain/references/MEMORY.md) — State management, checkpointers, and persistent session storage.
-  - [middleware.md](skills/LangChain/references/MIDDLEWARE.md) — Writing hooks to intercept tool execution and model requests.
-  - [learning_path.md](skills/LangChain/references/LearningPath.md) — Structured curriculum from beginner concepts to Production Graphs.
+  - [models.md](skills/skills/LangChain/references/MODELS.md) — Model initializations, streaming, and tool calling basics.
+  - [agents.md](skills/skills/LangChain/references/AGENT.md) — Detailed configurations for single and multi-agent harnesses.
+  - [memory.md](skills/skills/LangChain/references/MEMORY.md) — State management, checkpointers, and persistent session storage.
+  - [middleware.md](skills/skills/LangChain/references/MIDDLEWARE.md) — Writing hooks to intercept tool execution and model requests.
+  - [learning_path.md](skills/skills/LangChain/references/LearningPath.md) — Structured curriculum from beginner concepts to Production Graphs.
 </details>
 
 <details>
@@ -126,11 +126,11 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Data indexing and query retrievers. Optimizes loading documents via parsers and building advanced indexing strategies.
 - **Key Reference Docs**:
-  - [rag_fundamentals.md](skills/Llamaindex/references/rag_fundamentals.md) — Fundamental steps of retrieval-augmented generation.
-  - [loading_and_nodes.md](skills/Llamaindex/references/loading_and_nodes.md) — Schema parsing, Ingestion pipelines, and custom node splitters.
-  - [indexing_and_embeddings.md](skills/Llamaindex/references/indexing_and_embeddings.md) — Vector, Summary, and advanced PropertyGraph indices.
-  - [vector_databases.md](skills/Llamaindex/references/vector_database.md) — Integration configurations for databases like ChromaDB, Pinecone, and pgvector.
-  - [workflows.md](skills/Llamaindex/references/workflows.md) — Event-driven loops, step functions, and concurrency control.
+  - [rag_fundamentals.md](skills/skills/Llamaindex/references/rag_fundamentals.md) — Fundamental steps of retrieval-augmented generation.
+  - [loading_and_nodes.md](skills/skills/Llamaindex/references/loading_and_nodes.md) — Schema parsing, Ingestion pipelines, and custom node splitters.
+  - [indexing_and_embeddings.md](skills/skills/Llamaindex/references/indexing_and_embeddings.md) — Vector, Summary, and advanced PropertyGraph indices.
+  - [vector_databases.md](skills/skills/Llamaindex/references/vector_database.md) — Integration configurations for databases like ChromaDB, Pinecone, and pgvector.
+  - [workflows.md](skills/skills/Llamaindex/references/workflows.md) — Event-driven loops, step functions, and concurrency control.
 </details>
 
 <details>
@@ -138,10 +138,10 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Optimized JSON document storage. Prioritizes queries when designing database schemas.
 - **Key Reference Docs**:
-  - [data_modeling.md](skills/MongoDB/references/data_modeling.md) — Decisions criteria on when to embed nested data vs. join collections.
-  - [indexes.md](skills/MongoDB/references/indexes.md) — Setup guidelines for compound indexes (ESR rules).
-  - [aggregation.md](skills/MongoDB/references/aggregation.md) — Pipeline architecture, stages usage, and indexing integrations.
-  - [mongoose.md](skills/MongoDB/references/mongoose.md) — Schema layers, validations, and custom model middleware in Express apps.
+  - [data_modeling.md](skills/skills/MongoDB/references/data_modeling.md) — Decisions criteria on when to embed nested data vs. join collections.
+  - [indexes.md](skills/skills/MongoDB/references/indexes.md) — Setup guidelines for compound indexes (ESR rules).
+  - [aggregation.md](skills/skills/MongoDB/references/aggregation.md) — Pipeline architecture, stages usage, and indexing integrations.
+  - [mongoose.md](skills/skills/MongoDB/references/mongoose.md) — Schema layers, validations, and custom model middleware in Express apps.
 </details>
 
 <details>
@@ -149,10 +149,10 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Traditional relational mapping and SQL queries. Combines tabular schemas with hybrid unstructured columns.
 - **Key Reference Docs**:
-  - [datatypes_and_design.md](skills/PostgreSQL/references/datatypes_and_design.md) — Structured schemas, identities, and `JSONB` documents.
-  - [queries.md](skills/PostgreSQL/references/queries.md) — Advanced analytics (window functions, subqueries, and CTE expressions).
-  - [indexs_and_performance.md](skills/PostgreSQL/references/indexs_and_performance.md) — B-trees, GIN indexes, and using `EXPLAIN ANALYZE` logs.
-  - [transactions_and_concurrency.md](skills/PostgreSQL/references/transactions_and_concurrency.md) — Row locking configurations and MVCC transactional states.
+  - [datatypes_and_design.md](skills/skills/PostgreSQL/references/datatypes_and_design.md) — Structured schemas, identities, and `JSONB` documents.
+  - [queries.md](skills/skills/PostgreSQL/references/queries.md) — Advanced analytics (window functions, subqueries, and CTE expressions).
+  - [indexs_and_performance.md](skills/skills/PostgreSQL/references/indexs_and_performance.md) — B-trees, GIN indexes, and using `EXPLAIN ANALYZE` logs.
+  - [transactions_and_concurrency.md](skills/skills/PostgreSQL/references/transactions_and_concurrency.md) — Row locking configurations and MVCC transactional states.
 </details>
 
 <details>
@@ -160,10 +160,10 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Structuring client-facing AI layouts. Develops clean event structures to display agent reasoning states.
 - **Key Reference Docs**:
-  - [streaming_and_llm_ui.md](skills/React/references/streaming_and_llm_ui.md) — Client fetching protocols using SSE and WebSockets.
-  - [chat_ui_patterns.md](skills/React/references/chat_ui_patterns.md) — Rich text styling, scroll managers, and cancel hooks.
-  - [agentic_ui_patterns.md](skills/React/references/agentic_ui_patterns.md) — Interactive step logs, trace visualizations, and human-in-the-loop approvals.
-  - [fastapi_ml_services.md](skills/React/references/fastapi_ml_services.md) — Serving scikit-learn or PyTorch weight loads with FastAPI lifespans.
+  - [streaming_and_llm_ui.md](skills/skills/React/references/streaming_and_llm_ui.md) — Client fetching protocols using SSE and WebSockets.
+  - [chat_ui_patterns.md](skills/skills/React/references/chat_ui_patterns.md) — Rich text styling, scroll managers, and cancel hooks.
+  - [agentic_ui_patterns.md](skills/skills/React/references/agentic_ui_patterns.md) — Interactive step logs, trace visualizations, and human-in-the-loop approvals.
+  - [fastapi_ml_services.md](skills/skills/React/references/fastapi_ml_services.md) — Serving scikit-learn or PyTorch weight loads with FastAPI lifespans.
 </details>
 
 <details>
@@ -171,10 +171,10 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Pipeline deployment. Coordinates scalable container layers for backend services and ML inference.
 - **Key Reference Docs**:
-  - [dockerfiles_for_ml.md](skills/docker-k8s-mlops/references/dockerfiles_for_ml.md) — Multi-stage builds, dependencies caching, and image size constraints.
-  - [probs_and_healing.md](skills/docker-k8s-mlops/references/probs_and_healing.md) — Defining liveness/readiness thresholds to avoid weight loading timeouts.
-  - [gpu_on_kubernetes.md](skills/docker-k8s-mlops/references/gpu_on_kubernetes.md) — Device configurations, quotas scheduler, and node pools matching.
-  - [cicd_and_gitops.md](skills/docker-k8s-mlops/references/cicd_and_gitops.md) — Automatic rollback pipelines using GitOps operators.
+  - [dockerfiles_for_ml.md](skills/skills/docker-k8s-mlops/references/dockerfiles_for_ml.md) — Multi-stage builds, dependencies caching, and image size constraints.
+  - [probs_and_healing.md](skills/skills/docker-k8s-mlops/references/probs_and_healing.md) — Defining liveness/readiness thresholds to avoid weight loading timeouts.
+  - [gpu_on_kubernetes.md](skills/skills/docker-k8s-mlops/references/gpu_on_kubernetes.md) — Device configurations, quotas scheduler, and node pools matching.
+  - [cicd_and_gitops.md](skills/skills/docker-k8s-mlops/references/cicd_and_gitops.md) — Automatic rollback pipelines using GitOps operators.
 </details>
 
 <details>
@@ -182,10 +182,10 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Reusable backend layout with clean validation. Built around Pydantic schema validation.
 - **Key Reference Docs**:
-  - [DATABASE.md](skills/fastapi_skill/referencs/DATABASE.md) — SQLAlchemy connection pipelines, Session handlers, and Alembic migrations.
-  - [Auth.md](skills/fastapi_skill/referencs/Auth.md) — OAuth2 authentication setups, JWT generation, and password hashing guards.
-  - [TEST.md](skills/fastapi_skill/referencs/TEST.md) — Writing pytest fixtures with db overrides and async network mocks.
-  - [DEPLOYMENT.md](skills/fastapi_skill/referencs/DEPLOYMENT.md) — Gunicorn/Uvicorn configurations, Docker wrapping, and production logs setup.
+  - [DATABASE.md](skills/skills/fastapi_skill/referencs/DATABASE.md) — SQLAlchemy connection pipelines, Session handlers, and Alembic migrations.
+  - [Auth.md](skills/skills/fastapi_skill/referencs/Auth.md) — OAuth2 authentication setups, JWT generation, and password hashing guards.
+  - [TEST.md](skills/skills/fastapi_skill/referencs/TEST.md) — Writing pytest fixtures with db overrides and async network mocks.
+  - [DEPLOYMENT.md](skills/skills/fastapi_skill/referencs/DEPLOYMENT.md) — Gunicorn/Uvicorn configurations, Docker wrapping, and production logs setup.
 </details>
 
 <details>
@@ -193,10 +193,10 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Flexible client-server communication. Exposes local resources and actions cleanly to any AI host.
 - **Key Reference Docs**:
-  - [tools_resource_prompts.md](skills/mcp/references/tools_resource_prompts.md) — Customizing entry parameters and return schemas.
-  - [building_servers.md](skills/mcp/references/building_servers.md) — Setup protocols using FastMCP wrapper decorators.
-  - [transports.md](skills/mcp/references/transports.md) — Standard input/output streams vs. remote HTTP and ASGI mount pathways.
-  - [security.md](skills/mcp/references/security.md) — Mitigating sandbox escalations, prompt injections, and token poisoning.
+  - [tools_resource_prompts.md](skills/skills/mcp/references/tools_resource_prompts.md) — Customizing entry parameters and return schemas.
+  - [building_servers.md](skills/skills/mcp/references/building_servers.md) — Setup protocols using FastMCP wrapper decorators.
+  - [transports.md](skills/skills/mcp/references/transports.md) — Standard input/output streams vs. remote HTTP and ASGI mount pathways.
+  - [security.md](skills/skills/mcp/references/security.md) — Mitigating sandbox escalations, prompt injections, and token poisoning.
 </details>
 
 <details>
@@ -204,13 +204,13 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Type-safe data validation, settings management, and AI agent development using Pydantic and PydanticAI.
 - **Key Reference Docs**:
-  - [validation_fundamentals.md](skills/pydantic/references/validation_fundamentals.md) — BaseModels, field constraints, type coercion, and serialization.
-  - [validators.md](skills/pydantic/references/validators.md) — Custom field and model validators with before, after, and wrap modes.
-  - [pydantic_ai_agents.md](skills/pydantic/references/pydantic_ai_agents.md) — Type-safe AI agents with structured outputs, streaming, and multi-turn flows.
-  - [tools_and_dependencies.md](skills/pydantic/references/tools_and_dependencies.md) — Agent tools, typed dependency injection, RunContext, and retries.
-  - [structured_outputs.md](skills/pydantic/references/structured_outputs.md) — Validated LLM responses, validation retries, and output strategies.
-  - [settings_management.md](skills/pydantic/references/settings_management.md) — Environment variables loading and application configuration.
-  - [learning_path.md](skills/pydantic/references/learning_path.md) — Step-by-step track from basic schemas to production multi-agent systems.
+  - [validation_fundamentals.md](skills/skills/pydantic/references/validation_fundamentals.md) — BaseModels, field constraints, type coercion, and serialization.
+  - [validators.md](skills/skills/pydantic/references/validators.md) — Custom field and model validators with before, after, and wrap modes.
+  - [pydantic_ai_agents.md](skills/skills/pydantic/references/pydantic_ai_agents.md) — Type-safe AI agents with structured outputs, streaming, and multi-turn flows.
+  - [tools_and_dependencies.md](skills/skills/pydantic/references/tools_and_dependencies.md) — Agent tools, typed dependency injection, RunContext, and retries.
+  - [structured_outputs.md](skills/skills/pydantic/references/structured_outputs.md) — Validated LLM responses, validation retries, and output strategies.
+  - [settings_management.md](skills/skills/pydantic/references/settings_management.md) — Environment variables loading and application configuration.
+  - [learning_path.md](skills/skills/pydantic/references/learning_path.md) — Step-by-step track from basic schemas to production multi-agent systems.
 </details>
 
 <details>
@@ -218,17 +218,17 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Layered defense model for securing LLMs and autonomous agents against prompt injection, jailbreaks, excessive agency, and tool/memory poisoning.
 - **Key Reference Docs**:
-  - [threat_landscape.md](skills/llm_agent_security/references/threat_landscape.md) — OWASP Top 10 for LLM/Agentic apps, MITRE ATLAS framework, and security scoring.
-  - [prompt_injection.md](skills/llm_agent_security/references/prompt_injection.md) — Attack surfaces (direct/indirect injection) and defense mechanisms.
-  - [jailbreaks.md](skills/llm_agent_security/references/jailbreaks.md) — Jailbreak tactics (roleplay, encoding, multi-turn crescendo) and mitigation.
-  - [guardrails.md](skills/llm_agent_security/references/guardrails.md) — Production runtime defenses using NeMo Guardrails, Guardrails AI, and LLM Guard.
-  - [agentic_risks.md](skills/llm_agent_security/references/agentic_risks.md) — Specific threats to autonomous agents like tool and memory poisoning.
-  - [least_privilege_architecture.md](skills/llm_agent_security/references/least_privilege_architecture.md) — Securing agents through sandboxing, scoped API keys, and human-in-the-loop approvals.
-  - [output_handling.md](skills/llm_agent_security/references/output_handling.md) — Sanitizing LLM outputs to prevent downstream SQLi, XSS, and PII leakage.
-  - [red_teaming.md](skills/llm_agent_security/references/red_teaming.md) — Adversarial pre-deployment testing using Garak, PyRIT, and Promptfoo.
-  - [rag_and_mcp_security.md](skills/llm_agent_security/references/rag_and_mcp_security.md) — Securing MCP server endpoints and data retrieval vector pipelines.
-  - [governance_and_monitoring.md](skills/llm_agent_security/references/governance_and_monitoring.md) — Compliance standards, NIST AI Risk Management Framework, and production logs.
-  - [learning_path.md](skills/llm_agent_security/references/learning_path.md) — Sequential roadmap from security fundamentals to enterprise security architecture.
+  - [threat_landscape.md](skills/skills/llm_agent_security/references/threat_landscape.md) — OWASP Top 10 for LLM/Agentic apps, MITRE ATLAS framework, and security scoring.
+  - [prompt_injection.md](skills/skills/llm_agent_security/references/prompt_injection.md) — Attack surfaces (direct/indirect injection) and defense mechanisms.
+  - [jailbreaks.md](skills/skills/llm_agent_security/references/jailbreaks.md) — Jailbreak tactics (roleplay, encoding, multi-turn crescendo) and mitigation.
+  - [guardrails.md](skills/skills/llm_agent_security/references/guardrails.md) — Production runtime defenses using NeMo Guardrails, Guardrails AI, and LLM Guard.
+  - [agentic_risks.md](skills/skills/llm_agent_security/references/agentic_risks.md) — Specific threats to autonomous agents like tool and memory poisoning.
+  - [least_privilege_architecture.md](skills/skills/llm_agent_security/references/least_privilege_architecture.md) — Securing agents through sandboxing, scoped API keys, and human-in-the-loop approvals.
+  - [output_handling.md](skills/skills/llm_agent_security/references/output_handling.md) — Sanitizing LLM outputs to prevent downstream SQLi, XSS, and PII leakage.
+  - [red_teaming.md](skills/skills/llm_agent_security/references/red_teaming.md) — Adversarial pre-deployment testing using Garak, PyRIT, and Promptfoo.
+  - [rag_and_mcp_security.md](skills/skills/llm_agent_security/references/rag_and_mcp_security.md) — Securing MCP server endpoints and data retrieval vector pipelines.
+  - [governance_and_monitoring.md](skills/skills/llm_agent_security/references/governance_and_monitoring.md) — Compliance standards, NIST AI Risk Management Framework, and production logs.
+  - [learning_path.md](skills/skills/llm_agent_security/references/learning_path.md) — Sequential roadmap from security fundamentals to enterprise security architecture.
 </details>
 
 <details>
@@ -236,15 +236,15 @@ Click on any panel below to expand and view the reference blueprints and guideli
 
 - **Focus**: Complete guide to efficient fine-tuning of LLMs using Unsloth (LoRA/QLoRA) with minimized VRAM footprint.
 - **Key Reference Docs**:
-  - [setup_and_models.md](skills/unsloth-finetuning/references/setup_and_models.md) — Installing Unsloth, base model selection, and VRAM requirement planning.
-  - [dataset_preparation.md](skills/unsloth-finetuning/references/dataset_preparation.md) — Chat templates, instruction formatting, and train/eval splits.
-  - [lora_hyperparameters.md](skills/unsloth-finetuning/references/lora_hyperparameters.md) — LoRA rank, alpha, dropout, target modules, and DoRA.
-  - [training.md](skills/unsloth-finetuning/references/training.md) — SFTTrainer configuration, learning rates, batch sizes, and gradient checkpointing.
-  - [evaluation.md](skills/unsloth-finetuning/references/evaluation.md) — Qualitative/quantitative validation and catastrophic forgetting mitigation.
-  - [export_and_deployment.md](skills/unsloth-finetuning/references/export_and_deployment.md) — Model merging, GGUF/Ollama export, and deployment with vLLM.
-  - [troubleshooting.md](skills/unsloth-finetuning/references/troubleshooting.md) — Common error resolution, OOM fixes, and chat template alignment.
-  - [advances_techniques.md](skills/unsloth-finetuning/references/advances_techniques.md) — Preference tuning (DPO), multimodal tuning, and advanced PEFT.
-  - [learning_path.md](skills/unsloth-finetuning/references/learning_path.md) — Structured curriculum from beginner concepts to advanced fine-tuning models.
+  - [setup_and_models.md](skills/skills/unsloth-finetuning/references/setup_and_models.md) — Installing Unsloth, base model selection, and VRAM requirement planning.
+  - [dataset_preparation.md](skills/skills/unsloth-finetuning/references/dataset_preparation.md) — Chat templates, instruction formatting, and train/eval splits.
+  - [lora_hyperparameters.md](skills/skills/unsloth-finetuning/references/lora_hyperparameters.md) — LoRA rank, alpha, dropout, target modules, and DoRA.
+  - [training.md](skills/skills/unsloth-finetuning/references/training.md) — SFTTrainer configuration, learning rates, batch sizes, and gradient checkpointing.
+  - [evaluation.md](skills/skills/unsloth-finetuning/references/evaluation.md) — Qualitative/quantitative validation and catastrophic forgetting mitigation.
+  - [export_and_deployment.md](skills/skills/unsloth-finetuning/references/export_and_deployment.md) — Model merging, GGUF/Ollama export, and deployment with vLLM.
+  - [troubleshooting.md](skills/skills/unsloth-finetuning/references/troubleshooting.md) — Common error resolution, OOM fixes, and chat template alignment.
+  - [advances_techniques.md](skills/skills/unsloth-finetuning/references/advances_techniques.md) — Preference tuning (DPO), multimodal tuning, and advanced PEFT.
+  - [learning_path.md](skills/skills/unsloth-finetuning/references/learning_path.md) — Structured curriculum from beginner concepts to advanced fine-tuning models.
 </details>
 
 ---
