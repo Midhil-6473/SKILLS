@@ -20,7 +20,8 @@ const SKILLS = [
   'llm_agent_security',
   'mcp',
   'pydantic',
-  'unsloth-finetuning'
+  'unsloth-finetuning',
+  'about-skills'
 ];
 
 // ASCII Art Banner
@@ -126,12 +127,13 @@ function installSkill(skillName, destDir) {
   }
   
   const packageRoot = path.join(__dirname, '..');
-  const srcPath = path.join(packageRoot, 'skills', 'skills', skillName);
+  const subFolder = skillName === 'about-skills' ? path.join('meta', 'info') : path.join('all', skillName);
+  const srcPath = path.join(packageRoot, 'skills', subFolder);
   const targetPath = path.join(destDir, skillName);
   
   if (!fs.existsSync(srcPath)) {
     // If running in development workspace and path resolves differently
-    const devPath = path.join(process.cwd(), 'skills', 'skills', skillName);
+    const devPath = path.join(process.cwd(), 'skills', subFolder);
     if (fs.existsSync(devPath)) {
       copyRecursiveSync(devPath, targetPath);
       console.log(`\x1b[32m✓ Installed skill "${skillName}" (exact structure) to ${targetPath}\x1b[0m`);
