@@ -126,12 +126,12 @@ function installSkill(skillName, destDir) {
   }
   
   const packageRoot = path.join(__dirname, '..');
-  const srcPath = path.join(packageRoot, 'skills', 'all', skillName);
+  const srcPath = path.join(packageRoot, 'skills', skillName);
   const targetPath = path.join(destDir, skillName);
   
   if (!fs.existsSync(srcPath)) {
     // If running in development workspace and path resolves differently
-    const devPath = path.join(process.cwd(), 'skills', 'all', skillName);
+    const devPath = path.join(process.cwd(), 'skills', skillName);
     if (fs.existsSync(devPath)) {
       copyRecursiveSync(devPath, targetPath);
       console.log(`\x1b[32m✓ Installed skill "${skillName}" (exact structure) to ${targetPath}\x1b[0m`);
