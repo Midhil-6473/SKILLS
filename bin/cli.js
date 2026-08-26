@@ -6,7 +6,7 @@ const os = require('os');
 const readline = require('readline');
 const p = require('@clack/prompts');
 
-const VERSION = '1.3.0';
+const VERSION = '1.4.0';
 
 const SKILLS = [
   'DSA',
@@ -15,6 +15,7 @@ const SKILLS = [
   'MongoDB',
   'PostgreSQL',
   'React',
+  'ab-testing',
   'docker-k8s-mlops',
   'fastapi_skill',
   'llm_agent_security',

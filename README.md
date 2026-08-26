@@ -1,6 +1,6 @@
 # Developer Skills Workspace
 
-Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 12 developer skills. It functions as both a personal reference center and a capability store for agentic development.
+Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 13 developer skills. It functions as both a personal reference center and a capability store for agentic development.
 
 To make this page highly readable and interactive, we've organized the domain references inside collapsible blocks below. You can copy the code from this file directly into your Git repository's `README.md`.
 
@@ -56,6 +56,7 @@ skills/all/
 ├── MongoDB/              # NoSQL Document Modeling, Aggregations, & Atlas Setup
 ├── PostgreSQL/           # SQL Fundamentals, Advanced Queries, & Operations
 ├── React/                # React + FastAPI AI UI/UX (Streaming, Agentic Panels)
+├── ab-testing/           # A/B Testing & Experimentation (Design, Statistics, Platforms, & AI/ML)
 ├── docker-k8s-mlops/     # Containerization, Kubernetes Orchestration, & MLOps
 ├── fastapi_skill/        # High-performance FastAPI Backend Design & Auth
 ├── llm_agent_security/   # LLM & Agentic Security (Injection, Guardrails, Sandboxing)
@@ -78,6 +79,7 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 | **MongoDB**         | NoSQL document modeling, compound indexes (ESR), and aggregations.       | [MongoDB/SKILL.md](skills/all/MongoDB/SKILL.md)                   |
 | **PostgreSQL**      | Relational schemas, analytical window queries, CTEs, and `JSONB` data.   | [PostgreSQL/SKILL.md](skills/all/PostgreSQL/SKILL.md)             |
 | **React + FastAPI** | AI UIs, Event Sources (SSE), websocket streaming, and proxy gateways.    | [React/SKILL.md](skills/all/React/SKILL.md)                       |
+| **A/B Testing**     | Complete manual for A/B testing and product/AI experimentation.          | [ab-testing/SKILL.md](skills/all/ab-testing/SKILL.md)             |
 | **Docker + K8s**    | Multi-stage image builds, liveness/readiness probes, and GPU scheduling. | [docker-k8s-mlops/SKILL.md](skills/all/docker-k8s-mlops/SKILL.md) |
 | **FastAPI**         | Clean API design, Pydantic validation, dependency injection, and auth.   | [fastapi_skill/SKILL.md](skills/all/fastapi_skill/SKILL.md)       |
 | **LLM Security**    | Securing LLM apps and agents against injection, jailbreaks, and excessive agency. | [llm_agent_security/SKILL.md](skills/all/llm_agent_security/SKILL.md) |
@@ -168,7 +170,22 @@ Click on any panel below to expand and view the reference blueprints and guideli
 </details>
 
 <details>
-<summary><b>7. Docker + Kubernetes MLOps Manual</b> (Click to expand)</summary>
+<summary><b>7. A/B Testing & Experimentation Manual</b> (Click to expand)</summary>
+
+- **Focus**: Complete manual for A/B testing and product/AI experimentation — designing, running, and correctly interpreting controlled experiments.
+- **Key Reference Docs**:
+  - [experiment_design.md](skills/all/ab-testing/references/experiment_design.md) — Hypotheses, randomization units, sample size/power calculation, and MDE.
+  - [statistical_analysis.md](skills/all/ab-testing/references/statistical_analysis.md) — Correct p-value/confidence interval interpretation, frequentist vs. Bayesian, and common pitfalls.
+  - [metrics_and_pitfalls.md](skills/all/ab-testing/references/metrics_and_pitfalls.md) — Primary vs. guardrail metrics, novelty/primacy effects, and Sample Ratio Mismatch (SRM).
+  - [advanced_techniques.md](skills/all/ab-testing/references/advanced_techniques.md) — CUPED variance reduction, sequential testing, and multi-armed bandits.
+  - [ai_ml_experimentation.md](skills/all/ab-testing/references/ai_ml_experimentation.md) — Online model/prompt comparison, offline eval vs. online testing, and LLM guardrails.
+  - [platforms_and_implementation.md](skills/all/ab-testing/references/platforms_and_implementation.md) — Evaluation of platform tooling (GrowthBook, Statsig, Eppo) and custom SQL/Python setups.
+  - [running_a_program.md](skills/all/ab-testing/references/running_a_program.md) — Prioritization, experimentation culture, and reading/writing report files.
+  - [learning_path.md](skills/all/ab-testing/references/learning_path.md) — Structured curriculum from beginner experimentation to advanced causal inference.
+</details>
+
+<details>
+<summary><b>8. Docker + Kubernetes MLOps Manual</b> (Click to expand)</summary>
 
 - **Focus**: Pipeline deployment. Coordinates scalable container layers for backend services and ML inference.
 - **Key Reference Docs**:
@@ -179,7 +196,7 @@ Click on any panel below to expand and view the reference blueprints and guideli
 </details>
 
 <details>
-<summary><b>8. FastAPI Expert Mentor</b> (Click to expand)</summary>
+<summary><b>9. FastAPI Expert Mentor</b> (Click to expand)</summary>
 
 - **Focus**: Reusable backend layout with clean validation. Built around Pydantic schema validation.
 - **Key Reference Docs**:
@@ -190,7 +207,7 @@ Click on any panel below to expand and view the reference blueprints and guideli
 </details>
 
 <details>
-<summary><b>9. Model Context Protocol (MCP) Manual</b> (Click to expand)</summary>
+<summary><b>10. Model Context Protocol (MCP) Manual</b> (Click to expand)</summary>
 
 - **Focus**: Flexible client-server communication. Exposes local resources and actions cleanly to any AI host.
 - **Key Reference Docs**:
@@ -201,7 +218,7 @@ Click on any panel below to expand and view the reference blueprints and guideli
 </details>
 
 <details>
-<summary><b>10. Pydantic Architect's Manual</b> (Click to expand)</summary>
+<summary><b>11. Pydantic Architect's Manual</b> (Click to expand)</summary>
 
 - **Focus**: Type-safe data validation, settings management, and AI agent development using Pydantic and PydanticAI.
 - **Key Reference Docs**:
@@ -215,7 +232,7 @@ Click on any panel below to expand and view the reference blueprints and guideli
 </details>
 
 <details>
-<summary><b>11. LLM & Agent Security Manual</b> (Click to expand)</summary>
+<summary><b>12. LLM & Agent Security Manual</b> (Click to expand)</summary>
 
 - **Focus**: Layered defense model for securing LLMs and autonomous agents against prompt injection, jailbreaks, excessive agency, and tool/memory poisoning.
 - **Key Reference Docs**:
@@ -233,7 +250,7 @@ Click on any panel below to expand and view the reference blueprints and guideli
 </details>
 
 <details>
-<summary><b>12. Unsloth Fine-Tuning Manual</b> (Click to expand)</summary>
+<summary><b>13. Unsloth Fine-Tuning Manual</b> (Click to expand)</summary>
 
 - **Focus**: Complete guide to efficient fine-tuning of LLMs using Unsloth (LoRA/QLoRA) with minimized VRAM footprint.
 - **Key Reference Docs**:
@@ -268,6 +285,7 @@ graph TD
     Route -->|AI Tooling spec| MCP[Read mcp/SKILL.md]
     Route -->|Schema / PydanticAI| PY[Read pydantic/SKILL.md]
     Route -->|LLM Fine-tuning / LoRA| UF[Read unsloth-finetuning/SKILL.md]
+    Route -->|A/B Testing / Stats| AB[Read ab-testing/SKILL.md]
 
     DSA --> Consult[Consult references/ directory for targeted blueprints & guidelines]
     LC --> Consult
@@ -280,6 +298,7 @@ graph TD
     MCP --> Consult
     PY --> Consult
     UF --> Consult
+    AB --> Consult
 ```
 
 1. **Check the Entrypoint**: Start by reading the root `SKILL.md` of the relevant folder. It holds best practices, quick install setup commands, and a code stub.
