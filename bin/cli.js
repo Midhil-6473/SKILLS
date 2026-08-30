@@ -6,7 +6,7 @@ const os = require('os');
 const readline = require('readline');
 const p = require('@clack/prompts');
 
-const VERSION = '1.4.0';
+const VERSION = '1.5.0';
 
 const SKILLS = [
   'DSA',
@@ -18,6 +18,7 @@ const SKILLS = [
   'ab-testing',
   'docker-k8s-mlops',
   'fastapi_skill',
+  'llmCostOptimization',
   'llm_agent_security',
   'mcp',
   'pydantic',

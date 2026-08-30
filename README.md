@@ -1,6 +1,6 @@
 # Developer Skills Workspace
 
-Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 13 developer skills. It functions as both a personal reference center and a capability store for agentic development.
+Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 14 developer skills. It functions as both a personal reference center and a capability store for agentic development.
 
 To make this page highly readable and interactive, we've organized the domain references inside collapsible blocks below. You can copy the code from this file directly into your Git repository's `README.md`.
 
@@ -59,6 +59,7 @@ skills/all/
 ├── ab-testing/           # A/B Testing & Experimentation (Design, Statistics, Platforms, & AI/ML)
 ├── docker-k8s-mlops/     # Containerization, Kubernetes Orchestration, & MLOps
 ├── fastapi_skill/        # High-performance FastAPI Backend Design & Auth
+├── llmCostOptimization/  # LLM Cost Optimization (Token economics, prompt/semantic caching, routing)
 ├── llm_agent_security/   # LLM & Agentic Security (Injection, Guardrails, Sandboxing)
 ├── mcp/                  # Model Context Protocol (FastMCP Servers & Transports)
 ├── pydantic/             # Pydantic v2 Schema validation, Settings, & PydanticAI agents
@@ -82,6 +83,7 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 | **A/B Testing**     | Complete manual for A/B testing and product/AI experimentation.          | [ab-testing/SKILL.md](skills/all/ab-testing/SKILL.md)             |
 | **Docker + K8s**    | Multi-stage image builds, liveness/readiness probes, and GPU scheduling. | [docker-k8s-mlops/SKILL.md](skills/all/docker-k8s-mlops/SKILL.md) |
 | **FastAPI**         | Clean API design, Pydantic validation, dependency injection, and auth.   | [fastapi_skill/SKILL.md](skills/all/fastapi_skill/SKILL.md)       |
+| **LLM Cost Optimization** | Complete manual for optimizing LLM API costs, caching, model routing, and FinOps. | [llmCostOptimization/SKILL.md](skills/all/llmCostOptimization/SKILL.md) |
 | **LLM Security**    | Securing LLM apps and agents against injection, jailbreaks, and excessive agency. | [llm_agent_security/SKILL.md](skills/all/llm_agent_security/SKILL.md) |
 | **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](skills/all/mcp/SKILL.md)                           |
 | **Pydantic**        | Schema validation, settings management, and agentic workflows (PydanticAI).| [pydantic/SKILL.md](skills/all/pydantic/SKILL.md)                 |
@@ -265,6 +267,22 @@ Click on any panel below to expand and view the reference blueprints and guideli
   - [learning_path.md](skills/all/unsloth-finetuning/references/learning_path.md) — Structured curriculum from beginner concepts to advanced fine-tuning models.
 </details>
 
+<details>
+<summary><b>14. LLM Cost Optimization Manual</b> (Click to expand)</summary>
+
+- **Focus**: Strategic cost reduction for production LLM systems covering token economics, prompt and semantic caching, routing, model selection, and observability.
+- **Key Reference Docs**:
+  - [token_economics.md](skills/all/llmCostOptimization/references/token_economics.md) — Token calculation mechanics, input/output asymmetry, and pre-production cost estimation.
+  - [prompt_caching.md](skills/all/llmCostOptimization/references/prompt_caching.md) — Caching prefixes, Anthropic vs. OpenAI implementation details, and cache-friendly prompt design.
+  - [model_routing.md](skills/all/llmCostOptimization/references/model_routing.md) — Classification routers, fallback cascades, and routing libraries (LiteLLM/RouteLLM).
+  - [model_selection.md](skills/all/llmCostOptimization/references/model_selection.md) — Model right-sizing, open-weights vs. proprietary, and self-hosting cost analysis.
+  - [semantic_caching_and_compression.md](skills/all/llmCostOptimization/references/semantic_caching_and_compression.md) — Semantic caching (Redis/GPTCache) and prompt compression using LLMLingua.
+  - [batching_and_async.md](skills/all/llmCostOptimization/references/batching_and_async.md) — Leveraging batch APIs for non-realtime async tasks at 50% discount.
+  - [agentic_and_rag_costs.md](skills/all/llmCostOptimization/references/agentic_and_rag_costs.md) — Managing costs in agentic loops, multi-agent overhead, and RAG context pricing.
+  - [observability_and_finops.md](skills/all/llmCostOptimization/references/observability_and_finops.md) — Observability stacks, token attribution, budget alerts, and AI FinOps.
+  - [learning_path.md](skills/all/llmCostOptimization/references/learning_path.md) — A curriculum for learning cost optimization from beginner calculations to enterprise scaling.
+</details>
+
 ---
 
 ## 🧭 How to Consult & Use the Skills
@@ -286,6 +304,7 @@ graph TD
     Route -->|Schema / PydanticAI| PY[Read pydantic/SKILL.md]
     Route -->|LLM Fine-tuning / LoRA| UF[Read unsloth-finetuning/SKILL.md]
     Route -->|A/B Testing / Stats| AB[Read ab-testing/SKILL.md]
+    Route -->|LLM Cost / FinOps| COST[Read llmCostOptimization/SKILL.md]
 
     DSA --> Consult[Consult references/ directory for targeted blueprints & guidelines]
     LC --> Consult
@@ -299,6 +318,7 @@ graph TD
     PY --> Consult
     UF --> Consult
     AB --> Consult
+    COST --> Consult
 ```
 
 1. **Check the Entrypoint**: Start by reading the root `SKILL.md` of the relevant folder. It holds best practices, quick install setup commands, and a code stub.
