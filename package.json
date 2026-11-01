@@ -1,6 +1,6 @@
 {
   "name": "developer-skills-bank",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "CLI tool to install structured developer skills and blueprints for AI CLIs and Agent harnesses.",
   "main": "bin/cli.js",
   "bin": {
@@ -21,6 +21,8 @@
     "claude",
     "mcp",
     "skills",
+    "context-engineering",
+    "context-window",
     "pydantic",
     "langchain",
     "llamaindex",

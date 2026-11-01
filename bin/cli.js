@@ -6,7 +6,7 @@ const os = require('os');
 const readline = require('readline');
 const p = require('@clack/prompts');
 
-const VERSION = '1.5.0';
+const VERSION = '1.6.0';
 
 const SKILLS = [
   'DSA',
@@ -16,6 +16,7 @@ const SKILLS = [
   'PostgreSQL',
   'React',
   'ab-testing',
+  'context-engineering',
   'docker-k8s-mlops',
   'fastapi_skill',
   'llmCostOptimization',

@@ -1,6 +1,6 @@
 # Developer Skills Workspace
 
-Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 14 developer skills. It functions as both a personal reference center and a capability store for agentic development.
+Welcome to the **Skills** workspace. This repository is a curated collection of structured blueprints, architect manuals, and reference patterns for 15 developer skills. It functions as both a personal reference center and a capability store for agentic development.
 
 To make this page highly readable and interactive, we've organized the domain references inside collapsible blocks below. You can copy the code from this file directly into your Git repository's `README.md`.
 
@@ -57,6 +57,7 @@ skills/all/
 ├── PostgreSQL/           # SQL Fundamentals, Advanced Queries, & Operations
 ├── React/                # React + FastAPI AI UI/UX (Streaming, Agentic Panels)
 ├── ab-testing/           # A/B Testing & Experimentation (Design, Statistics, Platforms, & AI/ML)
+├── context-engineering/  # Context Engineering & Window Management (Write, Select, Compress, Isolate)
 ├── docker-k8s-mlops/     # Containerization, Kubernetes Orchestration, & MLOps
 ├── fastapi_skill/        # High-performance FastAPI Backend Design & Auth
 ├── llmCostOptimization/  # LLM Cost Optimization (Token economics, prompt/semantic caching, routing)
@@ -88,6 +89,7 @@ Here is a summary of each skill and direct links to their entrypoint manuals:
 | **MCP**             | Model Context Protocol spec (server tools, resources, and prompts).      | [mcp/SKILL.md](skills/all/mcp/SKILL.md)                           |
 | **Pydantic**        | Schema validation, settings management, and agentic workflows (PydanticAI).| [pydantic/SKILL.md](skills/all/pydantic/SKILL.md)                 |
 | **Unsloth Fine-Tuning** | Efficient LLM fine-tuning (LoRA/QLoRA) with minimized VRAM footprints. | [unsloth-finetuning/SKILL.md](skills/all/unsloth-finetuning/SKILL.md) |
+| **Context Engineering** | Complete manual for context engineering, context rot, compaction, and window isolation. | [context-engineering/SKILL.md](skills/all/context-engineering/SKILL.md) |
 
 ---
 
@@ -283,6 +285,21 @@ Click on any panel below to expand and view the reference blueprints and guideli
   - [learning_path.md](skills/all/llmCostOptimization/references/learning_path.md) — A curriculum for learning cost optimization from beginner calculations to enterprise scaling.
 </details>
 
+<details>
+<summary><b>15. Context Engineering Manual</b> (Click to expand)</summary>
+
+- **Focus**: Strategic management of agent context windows, preventing context rot, memory hierarchy, and multi-agent context isolation (Write, Select, Compress, Isolate).
+- **Key Reference Docs**:
+  - [context_rot.md](skills/all/context-engineering/references/context_rot.md) — Research on context rot, token attention degradation, and attention budget.
+  - [write_strategies.md](skills/all/context-engineering/references/write_strategies.md) — External memory, scratchpads, plan files, and persistent files (`CLAUDE.md`/`AGENTS.md`).
+  - [select_strategies.md](skills/all/context-engineering/references/select_strategies.md) — On-demand retrieval, tool-result references vs. inline results, and scoped tool exposure.
+  - [compress_strategies.md](skills/all/context-engineering/references/compress_strategies.md) — Compaction/summarization mechanics, tool-result clearing, and provider implementations.
+  - [isolate_strategies.md](skills/all/context-engineering/references/isolate_strategies.md) — Sub-agent context isolation, summary-return pattern, and token budget allocation.
+  - [implementation_patterns.md](skills/all/context-engineering/references/implementation_patterns.md) — Worked implementations, LangGraph state-based context control, and Claude Agent SDK hooks.
+  - [measuring_and_debugging.md](skills/all/context-engineering/references/measuring_and_debugging.md) — Token budget tables, context diagnostic workflows, and observability.
+  - [learning_path.md](skills/all/context-engineering/references/learning_path.md) — Structured curriculum from beginner fundamentals to production multi-agent context architectures.
+</details>
+
 ---
 
 ## 🧭 How to Consult & Use the Skills
@@ -305,6 +322,7 @@ graph TD
     Route -->|LLM Fine-tuning / LoRA| UF[Read unsloth-finetuning/SKILL.md]
     Route -->|A/B Testing / Stats| AB[Read ab-testing/SKILL.md]
     Route -->|LLM Cost / FinOps| COST[Read llmCostOptimization/SKILL.md]
+    Route -->|Context Management / Rot| CE[Read context-engineering/SKILL.md]
 
     DSA --> Consult[Consult references/ directory for targeted blueprints & guidelines]
     LC --> Consult
@@ -319,6 +337,7 @@ graph TD
     UF --> Consult
     AB --> Consult
     COST --> Consult
+    CE --> Consult
 ```
 
 1. **Check the Entrypoint**: Start by reading the root `SKILL.md` of the relevant folder. It holds best practices, quick install setup commands, and a code stub.
